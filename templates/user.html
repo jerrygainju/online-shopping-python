@@ -1,0 +1,17 @@
+{% extends base.html %}
+{% load static %}
+{% load crispy_tag_forms %}
+
+{% block title %}create new account{% endblock %}
+
+
+{% block content %}
+<div class="offser-3 col-sm-6">
+
+    <form method="post" enctype="multipart/form-data">
+        {% crf_token %}
+        {{ UserForm| crispy }}
+        <input type="submit" value="submit" class="btn btn-primary">
+    </form>
+</div>
+{% endblock %}
